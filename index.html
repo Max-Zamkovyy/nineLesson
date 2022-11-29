@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson9</title>
+  </head>
+  <body>
+    <script>
+      let car = {
+        model: "BMW",
+        engine: 2.0,
+        issue: 2010,
+        doors: 4,
+      };
+
+      function cloneObj(obj) {
+        let cloneObject = {};
+        for (let key in obj) {
+          cloneObject[key] = obj[key];
+        }
+        return cloneObject;
+      }
+
+      let result = cloneObj(car);
+      console.log(result);
+
+      result.model = "Honda";
+      console.log(car.model);
+      console.log(result);
+
+      function getValues(obj) {
+        let array = [];
+        for (let key in obj) {
+          array.push(obj[key]);
+        }
+        return array;
+      }
+
+      let result1 = getValues(car);
+      console.log(result1);
+
+      function getKeys(obj) {
+        let array = [];
+        for (let key in obj) {
+          array.push(key);
+        }
+        return array;
+      }
+
+      let result2 = getKeys(car);
+      console.log(result2);
+
+      function getEntries(obj) {
+        let array1 = [];
+
+        for (let key in obj) {
+          let array2 = [];
+          array2.push(key, obj[key]);
+          array1.push(array2);
+        }
+        return array1;
+      }
+
+      let result3 = getEntries(car);
+      console.log(result3);
+    </script>
+  </body>
+</html>
